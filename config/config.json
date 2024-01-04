@@ -1,0 +1,13 @@
+{
+  "procedures" : {
+      "insert_stored_procedure": "InsertJobApplicationTest",
+      "update_stored_procedure":"UpdateJobApplicationStatus"
+  },
+  "queries" : {
+    "matching_jobs" : "SELECT Id, DateApplied, CompanyName, JobRoleGeneric, JobTitle, Status FROM [dbo].[JobApplicationsTest] WHERE LOWER(JobTitle) LIKE '%<identifier>%';",
+    "all_applications" : "SELECT DateApplied, CompanyName, JobRoleGeneric, JobTitle, Status FROM [dbo].[JobApplicationsTest]"
+  },
+  "tables" : {
+    "test_table" : "JobApplicationsTest"
+  }
+}
