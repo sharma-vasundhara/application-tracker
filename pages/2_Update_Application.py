@@ -48,14 +48,15 @@ def main():
         record_ids = [record["Id"] for record in matching_records]
         job_roles = [f"{record['Id']} - {record['JobTitle']}" for record in matching_records]
 
-        selected_record_index = st.selectbox("Select a Record:", job_roles)
+        selected_record_index = st.selectbox("Select a Record:", job_roles, placeholder="None")
         selected_record_id = record_ids[job_roles.index(selected_record_index)]
         new_status = st.text_input("Enter New Status:")
 
         update_button = st.button("Update Job Status", key=1002, on_click=click_button())
         if update_button:
-            update_job_application_status(selected_record_id, new_status, config)
-            st.success(f"Job status updated to {new_status} for Application ID {selected_record_id} successfully!")
+            if new_status is not None and new_status != "":
+                update_job_application_status(selected_record_id, new_status, config)
+                st.success(f"Job status updated to {new_status} for Application ID {selected_record_id} successfully!")
 
 
 if __name__ == "__main__":
