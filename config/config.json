@@ -5,7 +5,8 @@
   },
   "queries" : {
     "matching_jobs" : "SELECT Id, DateApplied, CompanyName, JobRoleGeneric, JobTitle, Status FROM [dbo].[JobApplicationsTest] WHERE LOWER(JobTitle) LIKE '%<identifier>%';",
-    "all_applications" : "SELECT DateApplied, CompanyName, JobRoleGeneric, JobTitle, Status FROM [dbo].[JobApplicationsTest]"
+    "all_applications" : "SELECT DateApplied, CompanyName, JobRoleGeneric, JobTitle, Status FROM [dbo].[JobApplicationsTest]",
+    "home_page_content" : "select content from [dbo].[HtmlMarkdownTable] where Id = 1"
   },
   "tables" : {
     "test_table" : "JobApplicationsTest"

@@ -3,6 +3,7 @@ from functions import connections, load_config
 
 st.set_page_config(layout="wide")
 
+
 def update_job_application_status(job_id, new_status, config):
     conn = connections.get_connection_details()
 
